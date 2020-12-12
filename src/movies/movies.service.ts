@@ -17,9 +17,9 @@ export class MoviesService {
     return movie;
   }
 
-  deleteOne(id: string): boolean {
+  deleteOne(id: string): void {
+    this.getOne(id);
     this.movies = this.movies.filter((movie) => movie.id !== +id);
-    return true;
   }
 
   create(movieData) {
